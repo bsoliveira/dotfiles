@@ -31,7 +31,7 @@ sudo chmod +x rofi/scripts/*.sh
 
 Pacotes Básicos
 ```bash
-sudo apt install xorg i3 fonts-recommended firefox-esr firefox-esr-l10n-pt-br alacritty dunst picom rofi lxpolkit autotiling feh xclip maim lxappearance pavucontrol nano htop fastfetch git curl unzip p7zip-full p7zip-rar unrar 
+sudo apt install xorg i3 fonts-recommended fonts-cantarell firefox-esr firefox-esr-l10n-pt-br alacritty dunst picom rofi lxpolkit autotiling feh xclip maim lxappearance pavucontrol nano htop fastfetch git curl unzip p7zip-full p7zip-rar unrar 
 ```
 
 Thunar
@@ -42,7 +42,12 @@ sudo apt install thunar thunar-archive-plugin thunar-volman gvfs-backends ntfs-3
 Demais sugestões (opcional)
 ```bash
 sudo apt install l3afpad atril galculator mpv quodlibet shotwell gnome-disk-utility seahorse
+
 ```
+
+Fonte Utilizada `MesloLGM Nerd Font` (Requerida para os ícones do terminal, i3status e scripts do Rofi)
+- Instalador fácil das fontes: https://github.com/officialrajdeepsingh/nerd-fonts-installer
+
 
 ## Recursos Utilizados
 - Thema GTK: https://github.com/lassekongo83/adw-gtk3
@@ -55,9 +60,7 @@ sudo apt install l3afpad atril galculator mpv quodlibet shotwell gnome-disk-util
 
 - Rofi applets: https://github.com/adi1090x/rofi
 
-- MesloLGM Nerd Font: https://www.nerdfonts.com
-
-- Instalador prático das fontes: https://github.com/officialrajdeepsingh/nerd-fonts-installer
+- Nerd Fonts: https://www.nerdfonts.com
 
 - Wallpapes: https://github.com/Henriquehnnm/Monokai-Pro-Wallpapers
 
