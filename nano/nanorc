@@ -48,14 +48,8 @@ bind ^Y redo main
 bind ^A mark main
 bind ^T gotoline main
 
-# Comentários em código
+# Toggle Comentários em código
 bind ^/ comment main
-
-
-# Teclas especiais
-
-# Ctrl+Backspace apaga palavra à esquerda (dependente do terminal)
-bind ^H chopwordleft main
 
 # Ajuda
 bind ^H help all
