@@ -1,0 +1,46 @@
+# Alacritty
+
+[window]
+padding = { x = 10, y = 10 }
+dynamic_padding = true
+opacity = 1.0
+
+[font]
+normal = { family = "MesloLGM Nerd Font", style = "Regular" }
+size = 10.0                    
+offset = { x = 0, y = 1 }      
+
+[cursor]
+style = "Block"                
+unfocused_hollow = true        
+
+[scrolling]
+history = 5000                
+
+[selection]
+save_to_clipboard = true       
+
+# Cores — Tema Monokai Pro
+[colors.primary]
+background = "#2D2A2E"
+foreground = "#FCFCFA"
+
+[colors.normal]
+black   = "#5B595C"
+red     = "#FF6188"
+green   = "#A9DC76"
+yellow  = "#FFD866"
+blue    = "#FC9867"
+magenta = "#AB9DF2"
+cyan    = "#78DCE8"
+white   = "#FCFCFA"
+
+[colors.bright]
+black   = "#5B595C"
+red     = "#FF6188"
+green   = "#A9DC76"
+yellow  = "#FFD866"
+blue    = "#FC9867"
+magenta = "#AB9DF2"
+cyan    = "#85DACC"
+white   = "#FCFCFA"

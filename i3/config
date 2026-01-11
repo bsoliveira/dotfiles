@@ -1,0 +1,135 @@
+
+# Variáveis
+set $mod Mod4
+set $term alacritty
+set $launcher rofi -modi drun -show drun
+set $fm thunar
+set $browser firefox
+
+# Comportamento geral
+floating_modifier $mod
+tiling_drag modifier titlebar
+
+# Aplicações
+bindsym $mod+Return exec $term
+bindsym $mod+d exec $launcher
+bindsym $mod+b exec $browser
+bindsym $mod+e exec $fm
+bindsym $mod+c exec flatpak run com.bitwarden.desktop
+bindsym $mod+Shift+p exec ~/.config/rofi/scripts/screenshot.sh
+
+# Teclas multimídia
+bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+
+# Gerenciamento de janelas
+bindsym $mod+Shift+q kill
+bindsym $mod+f fullscreen toggle
+bindsym $mod+space floating toggle
+
+# Foco
+bindsym $mod+Left  focus left
+bindsym $mod+Down  focus down
+bindsym $mod+Up    focus up
+bindsym $mod+Right focus right
+
+# Mover janelas
+bindsym $mod+Shift+Left  move left
+bindsym $mod+Shift+Down  move down
+bindsym $mod+Shift+Up    move up
+bindsym $mod+Shift+Right move right
+
+# Layouts
+bindsym $mod+v split v
+bindsym $mod+s split h
+
+# Resize mode
+mode "resize" {
+    bindsym Left  resize shrink width 10 px or 10 ppt
+    bindsym Down  resize grow height 10 px or 10 ppt
+    bindsym Up    resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
+}
+bindsym $mod+r mode "resize"
+
+# Regras de janelas flutuantes 
+for_window [class="pavucontrol"] floating enable
+for_window [class="mpv"] floating enable
+for_window [class="Lxappearance"] floating enable
+for_window [class="Galculator"] floating enable
+for_window [class="steam"] floating enable
+
+# Workspaces
+set $ws1  "1"
+set $ws2  "2"
+set $ws3  "3"
+set $ws4  "4"
+set $ws5  "5"
+
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+
+# Sessão
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exec ~/.config/rofi/scripts/powermenu.sh
+ 
+# Aparência
+font pango:MesloLGM Nerd Font 8
+
+default_border pixel 2
+hide_edge_borders smart
+
+gaps inner 4
+gaps outer 0
+
+# Cores - Tema Monokai Pro
+set $bg        #2D2A2E
+set $fg        #FCFCFA
+set $inactive  #939293
+set $accent    #78dce8
+set $urgent    #FF6188
+
+set $barfg     #FFD866
+
+# class                 border background text indicator
+client.focused          $accent   $accent   $bg $accent
+client.unfocused        $inactive $inactive $fg $inactive
+client.focused_inactive $inactive $inactive $fg $inactive
+client.urgent           $urgent   $urgent   $bg $urgent
+client.background       $bg
+
+# Bar
+bar {
+    position top
+    font pango:MesloLGM Nerd Font 9
+    status_command i3status
+
+    colors {
+        background $bg
+        statusline $barfg
+        separator  $bg
+        
+        #                  border background text
+        focused_workspace  $bg $barfg  $bg
+        inactive_workspace $bg $bg     $inactive
+        urgent_workspace   $bg $urgent $bg
+    }
+}
+
+# Autostart
+exec_always --no-startup-id ~/.config/i3/scripts/autostart.sh

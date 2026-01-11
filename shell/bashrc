@@ -1,0 +1,87 @@
+# ~/.bashrc — Debian 13
+# Executado para shells interativos não-login
+
+# Somente shell interativo
+case $- in
+    *i*) ;;
+    *) return ;;
+esac
+
+# Histórico
+HISTCONTROL=ignoreboth
+HISTSIZE=1000
+HISTFILESIZE=2000
+shopt -s histappend
+shopt -s checkwinsize
+
+# lesspipe
+[ -x /usr/bin/lesspipe ] && LESSOPEN="| /usr/bin/lesspipe %s" && export LESSOPEN
+
+# Prompt (PS1)
+PS1='\[\033[01;32m\]╭╴\u@\h\[\033[00m\]:\[\033[01;34m\]\w\n\[\033[01;32m\]╰╴$\[\e[0m\] '
+
+# Aliases personalizados
+# básicos
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# Eza (substitui ls)
+if command -v eza >/dev/null 2>&1; then
+    alias ls='eza --color=auto --icons --hyperlink'
+    alias ll='ls -lh --group'
+    alias la='ls -lhA --group'
+    alias lt='ls -T --level=2'
+    alias l1='ls -1'
+    alias lsd='ls -lh --sort=modified'
+fi
+
+# Diretórios
+alias g.='cd ~/.config'
+alias gh='cd ~'
+alias gd='cd ~/Downloads'
+
+# Rede
+alias ipl='ip -c -br -4 a'
+alias ipe='curl -4 -s --max-time 5 ifconfig.me || curl -4 -s --max-time 5 ipinfo.io/ip; echo'
+alias ports='ss -tulnp'
+alias portsp='lsof -P -i -n'
+
+# Outros
+alias weather='curl -s --max-time 10 wttr.in/uberaba'
+
+# NetworkManager / Wi-Fi
+alias wifi-status='nmcli -f DEVICE,TYPE,STATE,CONNECTION device'
+alias wifi-list='nmcli device wifi list --rescan yes'
+
+wifi-connect() {
+    nmcli device wifi connect "$@" --ask
+}
+
+wifi-disconnect() {
+    nmcli device disconnect "$@"
+}
+
+# bash-completion
+if ! shopt -oq posix; then
+    if [ -f /usr/share/bash-completion/bash_completion ]; then
+        . /usr/share/bash-completion/bash_completion
+    elif [ -f /etc/bash_completion ]; then
+        . /etc/bash_completion
+    fi
+fi
+
+# PATH
+[ -d "$HOME/bin" ] && PATH="$HOME/bin:$PATH"
+[ -d "$HOME/.local/bin" ] && PATH="$HOME/.local/bin:$PATH"
+
+# XDG Base Directory
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_STATE_HOME="$HOME/.local/state"
+
+export TERMINAL=alacritty
+
+# Aliases externos
+[ -f ~/.bash_aliases ] && . ~/.bash_aliases

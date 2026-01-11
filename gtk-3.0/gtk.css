@@ -1,0 +1,53 @@
+@define-color window_bg_color #221F22;
+@define-color window_fg_color #eee8d5;
+@define-color view_bg_color #2D2A2E;
+@define-color view_fg_color @window_fg_color;
+@define-color accent_bg_color #78DCE8;
+@define-color accent_fg_color @window_fg_color;
+@define-color headerbar_bg_color #403E41;
+@define-color headerbar_fg_color @window_fg_color;
+@define-color headerbar_backdrop_color @window_bg_color;
+@define-color popover_bg_color @headerbar_bg_color;
+@define-color popover_fg_color @view_fg_color;
+@define-color dialog_bg_color @headerbar_bg_color;
+@define-color dialog_fg_color @view_fg_color;
+@define-color card_bg_color @headerbar_bg_color;
+@define-color card_fg_color @view_fg_color;
+@define-color sidebar_bg_color @view_bg_color;
+@define-color sidebar_fg_color @window_fg_color;
+@define-color sidebar_backdrop_color @window_bg_color;
+@define-color secondary_sidebar_bg_color @headerbar_bg_color;
+@define-color secondary_sidebar_fg_color @view_fg_color;
+@define-color secondary_sidebar_backdrop_color @view_bg_color;
+@define-color destructive_bg_color #FF6188;
+@define-color success_bg_color #A9DC76;
+@define-color warning_bg_color #FFD866;
+@define-color error_bg_color #FF6188;
+
+@define-color theme_selected_bg_color alpha(@accent_bg_color, 0.75);
+
+treeview.view:selected:focus,
+treeview.view:selected,
+headerbar entry selection,
+.titlebar entry selection,
+entry selection,
+spinbutton:not(.vertical) selection,
+flowbox flowboxchild:selected,
+.view text selection:focus,
+iconview text selection:focus,
+.view text selection,
+iconview text selection,
+textview text selection:focus,
+textview text selection,
+.view:selected,
+iconview:selected,
+.view text:selected,
+iconview text:selected,
+textview text:selected {
+    background-color: @theme_selected_bg_color;
+}
+
+* {
+    border-radius: 2px;
+    -gtk-outline-radius: 2px;
+}
