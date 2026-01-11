@@ -15,13 +15,15 @@ Configurações pessoais para i3wm + Linux desktop.
 
 ## Instalação
 
+O script `bootstrap.sh` cria os links simbólicos para as devidas localizações de todos os arquivos de configuração (dotfiles).
+
 ```bash
 git clone https://github.com/bsoliveira/dotfiles.git ~/dotfiles
 cd ~/dotfiles
-./install.sh
+./bootstrap.sh
 ```
 
-Permissão de execução para os scripts
+Deve conceder permissão de execução para os scripts do i3 e Rofi
 ```bash
 sudo chmod +x i3/scripts/*.sh
 sudo chmod +x rofi/scripts/*.sh
