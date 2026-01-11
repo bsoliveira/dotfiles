@@ -1,6 +1,6 @@
 .cache/
 .local/share/
-.config/gtk-3.0/bookmarks
+.gtk-3.0/bookmarks
 .ssh
 *.log
 *.swp
