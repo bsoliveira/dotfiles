@@ -33,7 +33,7 @@ sudo chmod +x rofi/scripts/*.sh
 
 Pacotes Básicos
 ```bash
-sudo apt install xorg i3 fonts-recommended fonts-cantarell firefox-esr firefox-esr-l10n-pt-br alacritty dunst picom rofi lxpolkit autotiling feh xclip maim lxappearance pavucontrol nano htop fastfetch git curl unzip p7zip-full p7zip-rar unrar 
+sudo apt install xorg i3 fonts-recommended fonts-cantarell firefox-esr firefox-esr-l10n-pt-br alacritty dunst picom rofi lxpolkit autotiling feh xclip maim lxappearance pavucontrol nano htop fastfetch eza git curl unzip p7zip-full p7zip-rar unrar 
 ```
 
 Thunar
