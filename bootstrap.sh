@@ -4,6 +4,13 @@ set -e
 
 DOTFILES_DIR="$HOME/dotfiles"
 
+# Não permitir execução como root ou sudo
+if [ "$(id -u)" -eq 0 ]; then
+    echo "Não execute este script como root ou usando sudo."
+    echo "Execute como usuário normal."
+    exit 1
+fi
+
 echo "Criando symlinks..."
 
 ln -sf "$DOTFILES_DIR/alacritty" ~/.config/
