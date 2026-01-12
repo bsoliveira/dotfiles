@@ -1,4 +1,3 @@
-# dotfiles
 # Dotfiles – i3wm
 
 Configurações pessoais para i3wm + Linux desktop.
