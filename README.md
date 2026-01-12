@@ -3,6 +3,10 @@
 
 Configurações pessoais para i3wm + Linux desktop.
 
+## Preview
+
+![i3wm + Debian 13](previews/workspace.png)
+
 ## Inclui
 - alacritty
 - dunst
