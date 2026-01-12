@@ -20,7 +20,6 @@ Execute script `bootstrap.sh` com o usuário normal para criar os links simbóli
 ```bash
 git clone https://github.com/bsoliveira/dotfiles.git ~/dotfiles
 cd ~/dotfiles
-sudo chmod +x bootstrap.sh
 ./bootstrap.sh
 ```
 
@@ -32,20 +31,8 @@ sudo chmod +x rofi/scripts/*.sh
 
 ### Requerimentos
 
-Pacotes Básicos
 ```bash
-sudo apt install xorg i3 fonts-recommended fonts-cantarell firefox-esr firefox-esr-l10n-pt-br alacritty dunst picom rofi lxpolkit autotiling feh xclip maim lxappearance pavucontrol nano htop fastfetch eza git curl unzip p7zip-full p7zip-rar unrar 
-```
-
-Thunar
-```bash
-sudo apt install thunar thunar-archive-plugin thunar-volman gvfs-backends ntfs-3g
-```
-
-Demais sugestões (opcional)
-```bash
-sudo apt install l3afpad atril galculator mpv quodlibet shotwell gnome-disk-utility seahorse
-
+sudo apt install alacritty autotiling dunst eza feh fastfetch fonts-cantarell htop lxappearance lxpolkit maim nano picom rofi xclip        
 ```
 
 Fonte Utilizada `MesloLGM Nerd Font` (Requerida para os ícones do terminal, i3status e scripts do Rofi)
@@ -69,8 +56,7 @@ Fonte Utilizada `MesloLGM Nerd Font` (Requerida para os ícones do terminal, i3s
 
 
 
-
-## i3wm — Atalhos de Teclado (Configuração Pessoal)
+## i3wm — Atalhos de Teclado Personalizados
 
 **Mod:** `Super (Mod4)` Tecla Windows
 
@@ -110,7 +96,7 @@ Fonte Utilizada `MesloLGM Nerd Font` (Requerida para os ícones do terminal, i3s
 
 
 
-## GNU nano — Atalhos (Configuração Pessoal)
+## GNU nano — Atalhos de Teclado Personalizados
 
 - `Ctrl + X` → Recortar
 - `Ctrl + C` → Copiar

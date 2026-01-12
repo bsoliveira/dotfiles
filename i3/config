@@ -1,24 +1,20 @@
 
 # Variáveis
 set $mod Mod4
-set $term alacritty
-set $launcher rofi -modi drun -show drun
-set $fm thunar
-set $browser firefox
 
 # Comportamento geral
 floating_modifier $mod
 tiling_drag modifier titlebar
 
 # Aplicações
-bindsym $mod+Return exec $term
-bindsym $mod+d exec $launcher
-bindsym $mod+b exec $browser
-bindsym $mod+e exec $fm
+bindsym $mod+Return exec alacritty
+bindsym $mod+d exec rofi -modi drun -show drun
+bindsym $mod+b exec firefox
+bindsym $mod+e exec thunar
 bindsym $mod+c exec flatpak run com.bitwarden.desktop
 bindsym $mod+Shift+p exec ~/.config/rofi/scripts/screenshot.sh
 
-# Teclas multimídia
+# Teclas multimídia - pipewire
 bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
 bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
