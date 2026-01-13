@@ -35,7 +35,7 @@ sudo chmod +x rofi/scripts/*.sh
 ### Requerimentos
 
 ```bash
-sudo apt install alacritty autotiling dunst eza feh fastfetch fonts-cantarell htop lxappearance lxpolkit maim nano picom rofi xclip        
+sudo apt install alacritty autotiling dunst eza feh fastfetch fonts-cantarell htop lxappearance lxpolkit maim nano picom rofi xclip xdotool       
 ```
 
 Fonte Utilizada `MesloLGM Nerd Font` (Requerida para os ícones do terminal, i3status e scripts do Rofi)
