@@ -32,7 +32,7 @@ case ${chosen} in
 		systemctl reboot
         ;;
     $lock)
-		i3lock --nofork --color=FC9867
+		.config/i3/scripts/blurlock.sh
         ;;
     $logout)
 		i3-msg exit
