@@ -1,5 +1,12 @@
-* {
-    font: "MesloLGM Nerd Font 10";
+configuration {
+    font:                 "MesloLGM Nerd Font 10";
+
+    display-drun:        " ";
+    display-run:         " ";
+    display-filebrowser: " ";
+    display-window:      " ";
 }
 
-@theme "/home/bruno/.config/rofi/themes/monokai-pro.rasi"
+@theme "/home/bruno/.config/rofi/themes/custom.rasi"
+
+

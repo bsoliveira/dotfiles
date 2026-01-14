@@ -2,7 +2,6 @@
 
 # Theme Elements
 prompt="󰐥  Confirma sair?"
-mesg="Uptime : `uptime -p | sed -e 's/up //g'`"
 
 # Options
 cancel="󰜺 Cancelar"
@@ -15,9 +14,7 @@ shutdown=" Deligar"
 rofi_cmd() {
 	rofi -dmenu \
 		-p "$prompt" \
-		-mesg "$mesg" \
-		-markup-rows \
-		-theme "$HOME/.config/rofi/config-powermenu.rasi"
+		-theme "$HOME/.config/rofi/powermenu.rasi"
 }
 
 # Pass variables to rofi dmenu

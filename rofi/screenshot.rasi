@@ -1,0 +1,18 @@
+@import "config.rasi"
+
+window {
+    width: 400px;
+}
+
+mainbox {
+    children: [ "inputbar", "listview" ];
+}
+
+inputbar {
+    children: [ "prompt"];
+}
+
+listview {
+    scrollbar: false;
+    lines:     5;
+}

@@ -8,7 +8,7 @@ tiling_drag modifier titlebar
 
 # Aplicações
 bindsym $mod+Return exec alacritty
-bindsym $mod+d exec rofi -modi drun -show drun -theme ~/.config/rofi/config-launcher.rasi
+bindsym $mod+d exec rofi -modi drun -show drun -theme ~/.config/rofi/launcher.rasi
 bindsym $mod+b exec firefox
 bindsym $mod+e exec thunar
 bindsym $mod+c exec flatpak run com.bitwarden.desktop

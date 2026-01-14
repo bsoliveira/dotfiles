@@ -1,0 +1,14 @@
+@import "config.rasi"
+
+window {
+    width: 600px;
+}
+
+inputbar {
+    children: [ "prompt", "textbox-prompt-colon", "entry" ];
+}
+
+listview {
+    lines: 6;
+}
+

@@ -2,9 +2,8 @@
 
 # Screenshot
 time=`date +%Y-%m-%d-%H-%M-%S`
-geometry=`xrandr | grep 'current' | head -n1 | cut -d',' -f2 | tr -d '[:blank:],current'`
 dir="`xdg-user-dir PICTURES`/Screenshots"
-file="Screenshot_${time}_${geometry}.png"
+file="Screenshot_${time}.png"
 
 # Theme Elements
 prompt=' Captura'
@@ -16,11 +15,16 @@ optWin="󱣴 Janela"
 opt5s="󰦖 Esperar 5s"
 opt10s="󰦖 Esperar 10s"
 
+# create Screenshots dir
+if [[ ! -d "$dir" ]]; then
+	mkdir -p "$dir"
+fi
+
 # Rofi CMD
 rofi_cmd() {
 	rofi -dmenu \
 		-p "$prompt" \
-		-theme "$HOME/.config/rofi/config-screenshot.rasi"
+		-theme "$HOME/.config/rofi/screenshot.rasi"
 }
 
 # Pass variables to rofi dmenu
@@ -28,14 +32,9 @@ run_rofi() {
 	echo -e "$optFull\n$optArea\n$optWin\n$opt5s\n$opt10s" | rofi_cmd
 }
 
-if [[ ! -d "$dir" ]]; then
-	mkdir -p "$dir"
-fi
-
 # notify and view screenshot
 notify_view() {
-	notify_cmd_shot='dunstify -u low --replace=699'
-	${notify_cmd_shot} "Captura de tela salva $file"
+	dunstify -u low --replace=699 "Captura de tela salva $file"
 }
 
 # Copy screenshot to clipboard
@@ -69,13 +68,13 @@ shotArea () {
 
 shot5 () {
 	countdown '5'
-	sleep 1 && cd ${dir} && maim -u -f png | copy_shot
+	sleep 1 && shotFull
 	notify_view
 }
 
 shot10 () {
 	countdown '10'
-	sleep 1 && cd ${dir} && maim -u -f png | copy_shot
+	sleep 1 && shotFull
 	notify_view
 }
 
