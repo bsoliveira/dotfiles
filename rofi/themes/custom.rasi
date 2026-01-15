@@ -5,12 +5,12 @@
  *******************************************************************************/
 
 * {
-    accent:                     #78DCE8;
-    background:                 #2D2A2E;
+    accent:                      #78DCE8;
+    background:                  #2D2A2E;
     foreground:                  var( accent );
     lightfg:                     var( accent );
     lightbg:                     var( background );
-    urgent:                     #FF6188;
+    urgent:                      #FF6188;
  
     border-color:                var(foreground);
     separatorcolor:              var(foreground);
