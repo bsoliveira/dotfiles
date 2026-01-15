@@ -41,6 +41,7 @@ copy_shot() {
 }
 
 # Captura a tela inteira
+# Aguarda brevemente para evitar capturar o menu do Rofi
 shot_full() {
     cd "$dir" || exit 1
     sleep 0.5

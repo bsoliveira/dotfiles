@@ -6,7 +6,7 @@
 # Caminho temporário para armazenar a captura de tela
 tmpbg='/tmp/i3lock.png'
 
-# Aguarda brevemente para evitar capturas incompletas
+# Aguarda brevemente para evitar capturar o menu do Rofi
 # e realiza a captura da tela com o maim
 sleep 0.5 && maim "$tmpbg"
 
