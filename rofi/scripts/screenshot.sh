@@ -1,100 +1,86 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-# Screenshot
-time=`date +%Y-%m-%d-%H-%M-%S`
-dir="`xdg-user-dir PICTURES`/Screenshots"
+# Script de captura de tela com menu interativo via rofi
+
+# Timestamp para nomeação do arquivo
+time="$(date +%Y%m%d%H%M%S)"
+
+# Diretório e nome do arquivo de saída
+dir="$(xdg-user-dir PICTURES)/Screenshots"
 file="Screenshot_${time}.png"
 
-# Theme Elements
-prompt=' Captura'
+# Tema do rofi
+theme="$HOME/.config/rofi/screenshot.rasi"
 
-# Options
+# Prompt exibido no menu
+prompt=" Captura"
+
+# Opções do menu
 optFull=" Tela cheia"
 optArea=" Região"
 optWin="󱣴 Janela"
-opt5s="󰦖 Esperar 5s"
-opt10s="󰦖 Esperar 10s"
+optDelay="󰦖 Esperar 5s"
 
-# create Screenshots dir
-if [[ ! -d "$dir" ]]; then
-	mkdir -p "$dir"
-fi
+# Cria o diretório de screenshots, se não existir
+mkdir -p "$dir"
 
-# Rofi CMD
-rofi_cmd() {
-	rofi -dmenu \
-		-p "$prompt" \
-		-theme "$HOME/.config/rofi/screenshot.rasi"
-}
-
-# Pass variables to rofi dmenu
+# Executa o rofi em modo dmenu
 run_rofi() {
-	echo -e "$optFull\n$optArea\n$optWin\n$opt5s\n$opt10s" | rofi_cmd
+    echo -e "$optFull\n$optArea\n$optWin\n$optDelay" | \
+    	rofi -dmenu -p "$prompt" -theme "$theme"
 }
 
-# notify and view screenshot
+# Exibe notificação após a captura
 notify_view() {
-	dunstify -u low --replace=699 "Captura de tela salva $file"
+    dunstify "$prompt" "$file"
 }
 
-# Copy screenshot to clipboard
-copy_shot () {
-	tee "$file" | xclip -selection clipboard -t image/png
+# Salva a imagem em arquivo e copia para a área de transferência
+copy_shot() {
+    tee "$file" | xclip -selection clipboard -t image/png
 }
 
-# countdown
-countdown () {
-	for sec in `seq $1 -1 1`; do
-		dunstify -t 1000 --replace=699 "Captura em : $sec"
-		sleep 1
-	done
+# Captura a tela inteira
+shot_full() {
+    cd "$dir" || exit 1
+    sleep 0.5
+    maim -u -f png | copy_shot
+    notify_view
 }
 
-# take shots
-shotFull () {
-	cd ${dir} && sleep 0.5 && maim -u -f png | copy_shot
-	notify_view
+# Captura a janela ativa
+shot_win() {
+    cd "$dir" || exit 1
+    maim -u -f png -i "$(xdotool getactivewindow)" | copy_shot
+    notify_view
 }
 
-shotWin () {
-	cd ${dir} && maim -u -f png -i `xdotool getactivewindow` | copy_shot
-	notify_view
+# Captura uma região selecionada pelo usuário
+shot_area() {
+    cd "$dir" || exit 1
+    maim -u -f png -s -b 2 -c 0.35,0.55,0.85,0.25 -l | copy_shot
+    notify_view
 }
 
-shotArea () {
-	cd ${dir} && maim -u -f png -s -b 2 -c 0.35,0.55,0.85,0.25 -l | copy_shot
-	notify_view
+# Captura a tela inteira após um pequeno atraso
+shot_delay() {
+    sleep 5
+    shot_full
 }
 
-shot5 () {
-	countdown '5'
-	sleep 1 && shotFull
-	notify_view
-}
-
-shot10 () {
-	countdown '10'
-	sleep 1 && shotFull
-	notify_view
-}
-
-# Actions
+# Executa a ação conforme a opção escolhida
 chosen="$(run_rofi)"
-case ${chosen} in
-    $optFull)
-		shotFull
+case "$chosen" in
+    "$optFull")
+        shot_full
         ;;
-    $optArea)
-		shotArea
+    "$optArea")
+        shot_area
         ;;
-    $optWin)
-		shotWin
+    "$optWin")
+        shot_win
         ;;
-    $opt5s)
-		shot5
-        ;;
-    $opt10s)
-		shot10
+    "$optDelay")
+        shot_delay
         ;;
 esac
-

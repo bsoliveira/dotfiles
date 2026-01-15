@@ -11,7 +11,7 @@ notification_limit = 20
 indicate_hidden = yes
 
 # Geometry 
-width = 260
+width = 300
 height = (0, 300)
 gap_size = 3
 separator_height = 8

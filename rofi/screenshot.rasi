@@ -14,5 +14,5 @@ inputbar {
 
 listview {
     scrollbar: false;
-    lines:     5;
+    lines:     4;
 }

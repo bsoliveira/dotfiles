@@ -93,7 +93,7 @@ hide_edge_borders smart
 gaps inner 4
 gaps outer 0
 
-# Cores - Tema Monokai Pro
+# Cores Monokai Pro
 set $bg        #2D2A2E
 set $fg        #FCFCFA
 set $inactive  #939293

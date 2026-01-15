@@ -20,7 +20,7 @@ history = 5000
 [selection]
 save_to_clipboard = true       
 
-# Cores — Tema Monokai Pro
+# Cores Monokai Pro
 [colors.primary]
 background = "#2D2A2E"
 foreground = "#FCFCFA"

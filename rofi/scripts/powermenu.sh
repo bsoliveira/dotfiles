@@ -1,43 +1,42 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-# Theme Elements
+# Script de menu de sessão usando rofi
+
+# Título exibido no prompt do rofi
 prompt="󰐥  Confirma sair?"
 
-# Options
+# Tema do rofi utilizado no menu
+theme="$HOME/.config/rofi/powermenu.rasi"
+
+# Opções do menu
 cancel="󰜺 Cancelar"
 lock=" Bloquear"
 logout=" Sair"
 reboot=" Reiniciar"
-shutdown=" Deligar"
+shutdown=" Desligar"
 
-# Rofi CMD
-rofi_cmd() {
-	rofi -dmenu \
-		-p "$prompt" \
-		-theme "$HOME/.config/rofi/powermenu.rasi"
-}
-
-# Pass variables to rofi dmenu
+# Executa o rofi em modo dmenu
 run_rofi() {
-	echo -e "$cancel\n$logout\n$lock\n$reboot\n$shutdown" | rofi_cmd
+    echo -e "$cancel\n$logout\n$lock\n$reboot\n$shutdown" | \
+        rofi -dmenu -p "$prompt" -theme "$theme"
 }
 
-# Actions
+# Executa a ação conforme a opção escolhida
 chosen="$(run_rofi)"
-case ${chosen} in
-    $shutdown)
-		systemctl poweroff
+case "${chosen}" in
+    "$shutdown")
+        systemctl poweroff
         ;;
-    $reboot)
-		systemctl reboot
+    "$reboot")
+        systemctl reboot
         ;;
-    $lock)
-		.config/i3/scripts/blurlock.sh
+    "$lock")
+        "$HOME/.config/i3/scripts/blurlock.sh"
         ;;
-    $logout)
-		i3-msg exit
+    "$logout")
+        i3-msg exit
         ;;
-	$cancel)
-		exit 1
+    "$cancel")
+        exit 0
         ;;
 esac
