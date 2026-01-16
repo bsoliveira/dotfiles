@@ -9,11 +9,11 @@ prompt="󰐥  Confirma sair?"
 theme="$HOME/.config/rofi/powermenu.rasi"
 
 # Opções do menu
-cancel="󰜺 Cancelar"
-lock=" Bloquear"
-logout=" Sair"
-reboot=" Reiniciar"
-shutdown=" Desligar"
+cancel="󰜺  Cancelar"
+lock="  Bloquear"
+logout="  Sair"
+reboot="  Reiniciar"
+shutdown="  Desligar"
 
 # Executa o rofi em modo dmenu
 run_rofi() {

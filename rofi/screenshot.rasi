@@ -4,10 +4,6 @@ window {
     width: 400px;
 }
 
-mainbox {
-    children: [ "inputbar", "listview" ];
-}
-
 inputbar {
     children: [ "prompt"];
 }

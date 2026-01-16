@@ -13,13 +13,13 @@ file="Screenshot_${time}.png"
 theme="$HOME/.config/rofi/screenshot.rasi"
 
 # Prompt exibido no menu
-prompt=" Captura"
+prompt="  Captura"
 
 # Opções do menu
-optFull=" Tela cheia"
-optArea=" Região"
-optWin="󱣴 Janela"
-optDelay="󰦖 Esperar 5s"
+optFull="  Tela cheia"
+optArea="  Região"
+optWin="󱣴  Janela"
+optDelay="󰦖  Esperar 5s"
 
 # Cria o diretório de screenshots, se não existir
 mkdir -p "$dir"

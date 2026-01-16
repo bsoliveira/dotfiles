@@ -1,7 +1,13 @@
+configuration {
+    show-icons: true;
+    location: 6;
+    yoffset: -100;
+}
+
 @import "config.rasi"
 
 window {
-    width: 600px;
+    width: calc( 40% min 512 );
 }
 
 inputbar {
@@ -9,6 +15,7 @@ inputbar {
 }
 
 listview {
-    lines: 6;
+    scrollbar: true;
+    lines: 8;
 }
 

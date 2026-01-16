@@ -1,10 +1,15 @@
 configuration {
-    font:                 "MesloLGM Nerd Font 10";
+    font:                 "MesloLGM Nerd Font 12";
+    icon-theme:           "Papirus-dark";
 
     display-drun:        " ";
     display-run:         " ";
     display-filebrowser: " ";
     display-window:      " ";
+
+    run,drun {
+      fallback-icon:     "application-x-addon";
+    }
 }
 
 @theme "/home/bruno/.config/rofi/themes/custom.rasi"
