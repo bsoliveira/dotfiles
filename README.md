@@ -1,6 +1,8 @@
 # Dotfiles – i3wm
 
-Configurações pessoais para i3wm + Linux desktop.
+É aqui que guardo meus dotfiles para i3wm + Linux desktop.
+
+Sinta-se a vontade para copiar qualquer um dos arquivos ou scripts que você encontrar aqui, grande parte deles são baseados nos .dotfiles de outros. 
 
 ## Preview
 

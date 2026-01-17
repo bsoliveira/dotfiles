@@ -13,7 +13,7 @@ file="Screenshot_${time}.png"
 theme="$HOME/.config/rofi/screenshot.rasi"
 
 # Prompt exibido no menu
-prompt="  Captura"
+prompt="  Captura de Tela"
 
 # Opções do menu
 optFull="  Tela cheia"
@@ -32,12 +32,32 @@ run_rofi() {
 
 # Exibe notificação após a captura
 notify_view() {
-    dunstify "$prompt" "$file"
+    dunstify -u low \
+        -h string:x-dunst-stack-tag:screenshot \
+        -i "photo" \
+        "$file"
 }
 
 # Salva a imagem em arquivo e copia para a área de transferência
 copy_shot() {
     tee "$file" | xclip -selection clipboard -t image/png
+}
+
+# contador com barra de progresso
+countdown() {
+    local total=$1
+
+    for ((sec=total; sec>=1; sec--)); do
+        local progress=$(( (sec * 100) / total ))
+
+        dunstify -t 1000 \
+            -h string:x-dunst-stack-tag:screenshot \
+            -h int:value:"$progress" \
+            -i "clock" \
+            "Captura em: $sec"
+
+        sleep 1
+    done
 }
 
 # Captura a tela inteira
@@ -65,8 +85,9 @@ shot_area() {
 
 # Captura a tela inteira após um pequeno atraso
 shot_delay() {
-    sleep 5
-    shot_full
+	countdown '5'
+	shot_full
+    notify_view
 }
 
 # Executa a ação conforme a opção escolhida

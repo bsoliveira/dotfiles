@@ -31,7 +31,7 @@ VOLUME=$(tr -dc '0-9' <<< "$STATUS" | sed 's/^0\{1,2\}//')
 if grep -q MUTED <<< "$STATUS"; then
 	ICON=muted
 	VOLUME=0
-	TEXT=Muted
+	TEXT=Mudo
 else
 	[ "$VOLUME" -lt 33 ] && ICON=low ||
 	[ "$VOLUME" -lt 66 ] && ICON=medium ||
@@ -43,4 +43,4 @@ dunstify -a Volume \
 	-h string:synchronous:volume \
 	-h "int:value:$VOLUME" \
 	-i "audio-volume-$ICON" \
-	Volume "$TEXT" -t 2000
+	"$TEXT" -t 2000
