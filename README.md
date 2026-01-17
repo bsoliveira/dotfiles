@@ -28,10 +28,9 @@ cd ~/dotfiles
 ./bootstrap.sh
 ```
 
-Deve conceder também permissão de execução para os scripts do i3 e Rofi
+Deve conceder permissão de execução para os scripts em bin
 ```bash
-sudo chmod +x i3/scripts/*.sh
-sudo chmod +x rofi/scripts/*.sh
+sudo chmod +x bin/*.sh
 ```
 
 ### Requerimentos
@@ -114,3 +113,12 @@ Fonte Utilizada `MesloLGM Nerd Font` (Requerida para os ícones do terminal, i3s
 - `Ctrl + T` → Ir para linha
 - `Ctrl + /` → Comentar / Descomentar
 - `Ctrl + H` → Abrir / fechar ajuda
+
+
+## Dicas
+
+Desativar opção duplicada do Thunar de definir Wallpaper pelo menu de contexto (Debian 13)
+
+```bash
+sudo mv /usr/lib/x86_64-linux-gnu/thunarx-3/thunar-wallpaper-plugin.so /usr/lib/x86_64-linux-gnu/thunarx-3/thunar-wallpaper-plugin.so.bak
+```

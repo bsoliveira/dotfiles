@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Script de bloqueio de tela usando i3lock com fundo desfocado
 # A imagem de fundo é gerada a partir de uma captura da tela atual

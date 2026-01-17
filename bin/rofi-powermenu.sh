@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Script de menu de sessão usando rofi
 
@@ -31,7 +31,7 @@ case "${chosen}" in
         systemctl reboot
         ;;
     "$lock")
-        "$HOME/.config/i3/scripts/blurlock.sh"
+        "$HOME/.local/bin/i3-blurlock.sh"
         ;;
     "$logout")
         i3-msg exit

@@ -12,12 +12,12 @@ bindsym $mod+d exec rofi -show drun -theme ~/.config/rofi/launcher.rasi
 bindsym $mod+b exec firefox
 bindsym $mod+e exec thunar
 bindsym $mod+c exec flatpak run com.bitwarden.desktop
-bindsym $mod+Shift+p exec ~/.config/rofi/scripts/screenshot.sh
+bindsym $mod+Shift+p exec ~/.local/bin/rofi-screenshot.sh
 
 # Teclas multimídia
-bindsym XF86AudioMute exec ~/.config/i3/scripts/volume.sh mute
-bindsym XF86AudioLowerVolume exec ~/.config/i3/scripts/volume.sh down
-bindsym XF86AudioRaiseVolume exec ~/.config/i3/scripts/volume.sh up
+bindsym XF86AudioMute exec ~/.local/bin/i3-volume.sh mute
+bindsym XF86AudioLowerVolume exec ~/.local/bin/i3-volume.sh down
+bindsym XF86AudioRaiseVolume exec ~/.local/bin/i3-volume.sh up
 
 # Gerenciamento de janelas
 bindsym $mod+Shift+q kill
@@ -82,7 +82,7 @@ bindsym $mod+Shift+5 move container to workspace $ws5
 # Sessão
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec ~/.config/rofi/scripts/powermenu.sh
+bindsym $mod+Shift+e exec ~/.local/bin/rofi-powermenu.sh
  
 # Aparência
 font pango:MesloLGM Nerd Font 8
@@ -128,4 +128,4 @@ bar {
 }
 
 # Autostart
-exec_always --no-startup-id ~/.config/i3/scripts/autostart.sh
+exec_always --no-startup-id ~/.local/bin/i3-autostart.sh

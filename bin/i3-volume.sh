@@ -1,7 +1,7 @@
-#!/bin/bash
-#
+#!/usr/bin/env bash
+
 # Controle de volume (PipeWire) com notificação via dunst
-# Uso: volume.sh {up|down|mute}
+# Uso: i3-volume.sh {up|down|mute}
 
 SINK='@DEFAULT_AUDIO_SINK@'
 

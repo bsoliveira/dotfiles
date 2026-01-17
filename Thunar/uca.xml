@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+<action>
+	<icon>utilities-terminal</icon>
+	<name>Open Terminal Here</name>
+	<submenu></submenu>
+	<unique-id>1767656450121073-1</unique-id>
+	<command>alacritty --working-directory %f</command>
+	<description>Example for a custom action</description>
+	<range></range>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+</action>
+<action>
+	<icon>clamav</icon>
+	<name>Escanear com ClamAV</name>
+	<submenu></submenu>
+	<unique-id>1767936120729423-1</unique-id>
+	<command>alacritty -e ~/.local/bin/my-clamscan %f</command>
+	<description>Realizar busca de malware</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+	<other-files/>
+</action>
+<action>
+	<icon>vscodium</icon>
+	<name>Abrir com VScodium</name>
+	<submenu></submenu>
+	<unique-id>1768619756187449-1</unique-id>
+	<command>codium %f</command>
+	<description>Abrir pasta com VScodium</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>preferences-desktop-wallpaper</icon>
+	<name>Definir como Wallpaper</name>
+	<submenu></submenu>
+	<unique-id>1768661008099558-1</unique-id>
+	<command>feh --bg-fill %f</command>
+	<description>feh --bg-fill %f</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<image-files/>
+</action>
+</actions>
