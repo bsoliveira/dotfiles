@@ -14,10 +14,10 @@ bindsym $mod+e exec thunar
 bindsym $mod+c exec flatpak run com.bitwarden.desktop
 bindsym $mod+Shift+p exec ~/.config/rofi/scripts/screenshot.sh
 
-# Teclas multimídia - pipewire
-bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
-bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
-bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+# Teclas multimídia
+bindsym XF86AudioMute exec ~/.config/i3/scripts/volume.sh mute
+bindsym XF86AudioLowerVolume exec ~/.config/i3/scripts/volume.sh down
+bindsym XF86AudioRaiseVolume exec ~/.config/i3/scripts/volume.sh up
 
 # Gerenciamento de janelas
 bindsym $mod+Shift+q kill

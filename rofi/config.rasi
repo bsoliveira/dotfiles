@@ -1,5 +1,5 @@
 configuration {
-    font:                 "MesloLGM Nerd Font 12";
+    font:                 "MesloLGM Nerd Font 10";
     icon-theme:           "Papirus-dark";
 
     display-drun:        " ";

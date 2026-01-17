@@ -4,11 +4,11 @@ window {
     width: 400px;
 }
 
+inputbar {
+    children: [ "prompt"];
+}
+
 listview {
     scrollbar: false;
     lines:     5;
-}
-
-inputbar {
-    children: [ "prompt"];
 }
