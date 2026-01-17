@@ -57,7 +57,12 @@
     --error-bg-color: @error_bg_color;
 }
 
-* {
+window.csd {
+  border-radius: 0px;
+  padding: 5px;
+}
+
+/* * {
     border-radius: 2px;
     -gtk-outline-radius: 2px;
-}
+} */

@@ -47,7 +47,7 @@ textview text:selected {
     background-color: @theme_selected_bg_color;
 }
 
-* {
+/* * {
     border-radius: 2px;
     -gtk-outline-radius: 2px;
-}
+} */

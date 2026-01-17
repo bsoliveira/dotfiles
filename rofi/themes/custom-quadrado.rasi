@@ -42,11 +42,10 @@
     spacing: 2; 
 }
 element {
-    padding:       10px ;
-    cursor:        pointer;
-    spacing:       5px ;
-    border:        0;
-    border-radius: 9px;
+    padding: 10px ;
+    cursor:  pointer;
+    spacing: 5px ;
+    border:  0;
 }
 element normal.normal {
     background-color: var(normal-background);
@@ -97,19 +96,17 @@ element-icon {
     text-color:       inherit;
 }
 window {
-    padding:          8;
+    padding:          10;
     background-color: var(background);
     border:           2;
-    border-radius:    9px;
 }
 mainbox {
-    padding: 10;
+    padding: 0;
     border:  0;
 }
 message {
-    padding:       10px ;
-    border:        0px ;
-    border-radius: 9px;
+    padding:      10px ;
+    border:       0px ;
 }
 textbox {
     text-color: var(foreground);
@@ -159,7 +156,6 @@ inputbar {
     spacing:          0px ;
     text-color:       var(normal-foreground);
     background-color: var(alternate-background);
-    border-radius:    9px;
     children:         [ "prompt","textbox-prompt-colon","entry","num-filtered-rows","textbox-num-sep","num-rows","case-indicator" ];
 }
 case-indicator {
