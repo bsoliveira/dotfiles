@@ -22,3 +22,8 @@ if [ -f ~/.fehbg ]; then
 else
     feh --bg-fill ~/.config/i3/backgrounds/default.png &
 fi
+
+# Som de Inicio
+if [ -f /usr/bin/canberra-gtk-play ]; then
+    canberra-gtk-play -i service-login &
+fi
