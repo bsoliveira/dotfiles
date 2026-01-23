@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<style-scheme id="monokai-pro" _name="Monokai Pro" version="1.0">
+<style-scheme id="custom-monokai-pro" _name="Custom Monokai Pro" version="1.0">
     <author>bsoliveira</author>
-    <_description>Monokai Pro color scheme</_description>
+    <_description>Inspired by the colors of the Monokai Pro theme</_description>
 
     <style name="background-pattern" background="#2D2A2E"/>
     <style name="bracket-match" background="#221F22" bold="true"/>
