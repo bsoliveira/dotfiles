@@ -43,7 +43,7 @@
 #   - NÃO execute sem entender o que o script faz
 #
 # Uso:
-#   ./home-clone.sh clone
+#   ./home-clone.sh backup
 #   ./home-clone.sh restore
 #
 # Autor: Bruno Silva Oliveira
