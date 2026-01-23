@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style-scheme id="monokai-pro" _name="Monokai Pro" version="1.0">
+    <author>bsoliveira</author>
+    <_description>Monokai Pro color scheme</_description>
+
+    <style name="background-pattern" background="#2D2A2E"/>
+    <style name="bracket-match" background="#221F22" bold="true"/>
+    <style name="bracket-mismatch" background="#221F22" underline="true"/>
+    <style name="css:at-rules" foreground="#FF6188"/>
+    <style name="css:color" foreground="#AB9DF2"/>
+    <style name="css:keyword" foreground="#78DCE8" italic="true"/>
+    <style name="current-line" background="#221F22"/>
+    <style name="cursor" foreground="#FCFCFA"/>
+    <style name="def:base-n-integer" foreground="#AB9DF2"/>
+    <style name="def:boolean" foreground="#AB9DF2"/>
+    <style name="def:builtin" foreground="#AB9DF2"/>
+    <style name="def:character" foreground="#AB9DF2"/>
+    <style name="def:comment" foreground="#727072"/>
+    <style name="def:complex" foreground="#AB9DF2"/>
+    <style name="def:decimal" foreground="#AB9DF2"/>
+    <style name="def:doc-comment" foreground="#727072"/>
+    <style name="def:doc-comment-element" foreground="#727072"/>
+    <style name="def:error" foreground="#FCFCFA" background="#FF6188"/>
+    <style name="def:floating-point" foreground="#AB9DF2"/>
+    <style name="def:function" foreground="#A9DC76"/>
+    <style name="def:keyword" foreground="#FF6188"/>
+    <style name="def:note" foreground="#727072"/>
+    <style name="def:number" foreground="#AB9DF2"/>
+    <style name="def:operator" foreground="#FF6188"/>
+    <style name="def:preprocessor" foreground="#78DCE8"/>
+    <style name="def:reserved" foreground="#FF6188"/>
+    <style name="def:shebang" foreground="#727072"/>
+    <style name="def:special-char" foreground="#78DCE8"/>
+    <style name="def:special-constant" foreground="#AB9DF2"/>
+    <style name="def:statement" foreground="#FF6188"/>
+    <style name="def:string" foreground="#FFD866"/>
+    <style name="def:type" foreground="#78DCE8" italic="true"/>
+    <style name="draw-spaces" foreground="#221F22"/>
+    <style name="html:dtd" foreground="#FFD866"/>
+    <style name="html:tag" foreground="#FF6188"/>
+    <style name="js:function" foreground="#78DCE8"/>
+    <style name="line-numbers" foreground="#939293" background="#403E41"/>
+    <style name="perl:builtin" foreground="#A9DC76"/>
+    <style name="perl:include-statement" foreground="#FF6188"/>
+    <style name="perl:special-variable" foreground="#AB9DF2"/>
+    <style name="php:string" foreground="#FFD866"/>
+    <style name="python:builtin-constant" foreground="#FF6188"/>
+    <style name="python:builtin-function" foreground="#A9DC76"/>
+    <style name="python:module-handler" foreground="#FF6188"/>
+    <style name="python:special-variable" foreground="#FF6188"/>
+    <style name="ruby:attribute-definition" foreground="#FF6188"/>
+    <style name="ruby:global-variable" foreground="#A9DC76"/>
+    <style name="ruby:module-handler" foreground="#FF6188"/>
+    <style name="ruby:predefined-variable" foreground="#AB9DF2"/>
+    <style name="ruby:regex" foreground="#FFD866"/>
+    <style name="ruby:special-variable" foreground="#FF6188"/>
+    <style name="ruby:symbol" foreground="#AB9DF2"/>
+    <style name="rubyonrails:attribute-definition" foreground="#FF6188"/>
+    <style name="rubyonrails:block-parameter" foreground="#FC9867" italic="true"/>
+    <style name="rubyonrails:class-inherit" foreground="#A9DC76" underline="true" italic="true"/>
+    <style name="rubyonrails:class-name" foreground="#78DCE8" italic="true"/>
+    <style name="rubyonrails:complex-interpolation" foreground="#AB9DF2"/>
+    <style name="rubyonrails:global-variable" foreground="#A9DC76"/>
+    <style name="rubyonrails:module-handler" foreground="#FF6188"/>
+    <style name="rubyonrails:module-name" foreground="#78DCE8" italic="true"/>
+    <style name="rubyonrails:predefined-variable" foreground="#AB9DF2"/>
+    <style name="rubyonrails:regex" foreground="#FFD866"/>
+    <style name="rubyonrails:simple-interpolation" foreground="#AB9DF2"/>
+    <style name="rubyonrails:special-variable" foreground="#FF6188"/>
+    <style name="rubyonrails:symbol" foreground="#AB9DF2"/>
+    <style name="search-match" background="#221F22" bold="true" underline="true"/>
+    <style name="selection" foreground="#FCFCFA" background="#403E41"/>
+    <style name="text" foreground="#FCFCFA" background="#2D2A2E"/>
+    <style name="xml:attribute-name" foreground="#A9DC76"/>
+    <style name="xml:element-name" foreground="#FF6188"/>
+    <style name="xml:namespace" foreground="#FF6188"/>
+    <style name="xml:tag" foreground="#FF6188"/>
+</style-scheme>

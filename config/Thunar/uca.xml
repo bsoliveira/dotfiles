@@ -26,7 +26,7 @@
 </action>
 <action>
 	<icon>vscodium</icon>
-	<name>Abrir com VScodium</name>
+	<name>Abrir pasta com VScodium</name>
 	<submenu></submenu>
 	<unique-id>1768619756187449-1</unique-id>
 	<command>codium %f</command>
@@ -41,7 +41,7 @@
 	<submenu></submenu>
 	<unique-id>1768661008099558-1</unique-id>
 	<command>feh --bg-fill %f</command>
-	<description>feh --bg-fill %f</description>
+	<description>Definir como Wallpaper com feh</description>
 	<range>*</range>
 	<patterns>*</patterns>
 	<image-files/>

@@ -20,17 +20,12 @@ Sinta-se a vontade para copiar qualquer um dos arquivos ou scripts que você enc
 
 ## Instalação
 
-Execute script `bootstrap.sh` com o usuário normal para criar os links simbólicos para as devidas localizações de todos os arquivos de configuração (dotfiles) no diretório do usuário ($HOME).
+ATENÇÃO: este instalador sobrescreve arquivos existentes no $HOME.
 
 ```bash
 git clone https://github.com/bsoliveira/dotfiles.git ~/dotfiles
 cd ~/dotfiles
-./bootstrap.sh
-```
-
-Deve conceder permissão de execução para os scripts em bin
-```bash
-sudo chmod +x bin/*.sh
+./install.sh
 ```
 
 ### Requerimentos
@@ -40,8 +35,6 @@ sudo apt install alacritty autotiling dunst eza feh fastfetch fonts-cantarell ht
 ```
 
 Fonte Utilizada `MesloLGM Nerd Font` (Requerida para os ícones do terminal, i3status e scripts do Rofi)
-- Instalador fácil das fontes: https://github.com/officialrajdeepsingh/nerd-fonts-installer
-
 
 ## Recursos Utilizados
 - Thema GTK: https://github.com/lassekongo83/adw-gtk3
@@ -55,6 +48,8 @@ Fonte Utilizada `MesloLGM Nerd Font` (Requerida para os ícones do terminal, i3s
 - Rofi applets: https://github.com/adi1090x/rofi
 
 - Nerd Fonts: https://www.nerdfonts.com
+
+- Instalador fácil das fontes: https://github.com/officialrajdeepsingh/nerd-fonts-installer
 
 - Wallpapes: https://github.com/Henriquehnnm/Monokai-Pro-Wallpapers
 
