@@ -18,7 +18,7 @@
 	<submenu></submenu>
 	<unique-id>1767936120729423-1</unique-id>
 	<command>alacritty -e ~/.local/bin/virus-scan.sh %f</command>
-	<description>Realizar busca de malware</description>
+	<description>Scanear com Clamav</description>
 	<range>*</range>
 	<patterns>*</patterns>
 	<directories/>
