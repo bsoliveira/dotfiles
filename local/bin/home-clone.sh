@@ -73,17 +73,17 @@ EXCLUDES=(
 
   # flatpak
   ".local/share/flatpak/"
-  ".var/app/*/cache/"
-  ".config/VSCodium/"
+  #".var/app/*/cache/"
 
   # dev
-  node_modules/
-  .npm/
-  .yarn/
-  .gradle/
-  .m2/repository/
-  __pycache__/
-  *.pyc
+  ".config/VSCodium/"
+  # "node_modules/"
+  # ".npm/"
+  # ".yarn/"
+  # ".gradle/"
+  # ".m2/repository/"
+  # "__pycache__/"
+  # "*.pyc"
 
   # Pastas
   "Área de trabalho/"
