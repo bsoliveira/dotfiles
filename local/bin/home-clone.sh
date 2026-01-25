@@ -7,10 +7,9 @@
 # Projetado para uso pessoal com HD externo dedicado.
 #
 # Objetivo:
-#   - Espelhar o conteúdo do $HOME de forma previsível
+#   - Espelhar o conteúdo do $HOME
 #   - Recriar rapidamente o ambiente do usuário
 #     após formatação ou troca de máquina
-#   - Evitar dependências complexas ou lógica obscura
 #
 # Características:
 #   - Usa rsync como backend
@@ -18,6 +17,11 @@
 #   - Restauração direta para $HOME
 #   - Exclusões explícitas e fixas
 #   - Confirmação obrigatória antes da restauração
+#
+# Requisitos:
+# - bash
+# - rsync
+# - mountpoint
 #
 # Requisitos do HD externo:
 #   - Deve estar montado antes da execução
@@ -36,45 +40,69 @@
 #
 # Avisos importantes:
 #   - A clonagem usa rsync com --delete:
-#       * arquivos removidos do $HOME
-#         também serão removidos no clone
-#   - Este script assume que o HD externo é
-#     dedicado exclusivamente ao home-clone
-#   - NÃO execute sem entender o que o script faz
+#    arquivos removidos do $HOME também serão removidos no clone
+#
+#   - A restauração por segurança NÃO usa --delete por padrão.
+#     Arquivos extras no $HOME não serão removidos no restore.
 #
 # Uso:
 #   ./home-clone.sh backup
 #   ./home-clone.sh restore
-#
-# Autor: Bruno Silva Oliveira
 
 set -euo pipefail
 
-## Configuração
-MOUNT_POINT="/media/bruno/BAKUP"
-CLONE_DIR="$MOUNT_POINT/home-clone"
-HOME_DIR="$HOME"
+if [ "$(id -u)" -eq 0 ]; then
+  echo "Não execute este script como root."
+  exit 1
+fi
 
+MOUNT_POINT="/media/bruno/BACKUP/"
+BACKUP_DIR="$MOUNT_POINT/home-clone"
+
+# Coloque aqui tudo que é considerado recriável ou não essencial.
 EXCLUDES=(
+  # cache
   ".cache/"
+  ".thumbnails/"
   ".local/share/Trash/"
+  ".var/"
+
+  # browsers
+  ".mozilla/firefox/*/storage/"
+  ".mozilla/firefox/*/cache2/"
+
+  # flatpak
+  ".local/share/flatpak/"
+  ".var/app/*/cache/"
+  ".config/VSCodium/"
+
+  # dev
+  node_modules/
+  .npm/
+  .yarn/
+  .gradle/
+  .m2/repository/
+  __pycache__/
+  *.pyc
+
+  # Pastas
+  "Área de trabalho/"
   "Downloads/"
+  "Público/"
   "Torrents/"
   "VirtManager/"
 )
 
-# Validações iniciais
-# Garante que o HD externo está montado
-if ! mountpoint -q "$MOUNT_POINT"; then
-  echo "HD externo não está montado em $MOUNT_POINT"
-  exit 1
-fi
+check_mount() {
+    if ! mountpoint -q "$MOUNT_POINT"; then
+        echo "HD de backup não está montado em $MOUNT_POINT"
+        exit 1
+    fi
+}
 
-# Garante que o diretório de clone existe
-mkdir -p "$CLONE_DIR"
-
-# Funções
 backup() {
+  check_mount
+
   echo "ATENÇÃO: este script CLONA o HOME."
   echo "Arquivos ausentes na origem serão removidos no clone."
   echo
@@ -87,19 +115,26 @@ backup() {
 
   echo "Iniciando clonagem da home..."
 
+  mkdir -p "$BACKUP_DIR"
+
   rsync -avh \
     --progress \
     --delete \
-    --numeric-ids \
-    --one-file-system \
     "${EXCLUDES[@]/#/--exclude=}" \
-    "$HOME_DIR/" \
-    "$CLONE_DIR/"
+    "$HOME/" \
+    "$BACKUP_DIR/"
 
   echo "Clonagem concluída com sucesso!"
 }
 
 restore() {
+  check_mount
+  
+  if [ ! -d "$BACKUP_DIR" ]; then
+    echo "Diretório de backup não encontrado: $BACKUP_DIR"
+    exit 1
+  fi
+
   echo "ATENÇÃO: este processo irá RESTAURAR arquivos para sua HOME."
   echo "Arquivos existentes podem ser SOBRESCRITOS."
   echo
@@ -114,16 +149,15 @@ restore() {
 
   rsync -avh \
     --progress \
-    --numeric-ids \
-    --one-file-system \
-    "$CLONE_DIR/" \
-    "$HOME_DIR/"
+    "$BACKUP_DIR/" \
+    "$HOME/"
 
   echo "Restauração concluída com sucesso!"
 }
 
 usage() {
   echo "Uso: $(basename "$0") backup | restore"
+  exit 1
 }
 
 # Entrada principal
